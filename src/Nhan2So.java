@@ -1,16 +1,29 @@
-import java.util.Scanner;
 
 public class Nhan2So {
+	private InputInterface in;
+	private OutputInterface out;
 	
-	void nhan2So() {
-		Scanner input = new Scanner(System.in);
-		int number1 = input.nextInt();
-		int number2 = input.nextInt();
-		
+	
+	
+	public Nhan2So(InputInterface in, 
+			OutputInterface out) {
+		this.in = in;
+		this.out = out;
+	}
+
+
+
+	int nhan2So() {
+		int result;
+		//business rules policy
 		//business rules (quy tắc nghiệp vụ)
-		int result = number1 * number2;
+		int number1 = in.input();
+		int number2 = in.input();
+		result =  number1 * number2;
 		
-		System.out.print("Result: " + result);
+		out.output("Result: " + result);
+		
+		return result;
 	}
 
 }
