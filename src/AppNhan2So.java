@@ -11,8 +11,11 @@ public class AppNhan2So {
 		Input input = new Input(keyboard);
 		Output output  = new Output(screen);
 		
-		Nhan2So n2so = new Nhan2So(input, output);
-		n2so.nhan2So();
+		Nhan2SoEntity n2so = new Nhan2SoEntity();
+		
+		Nhan2SoUseCaseControl control  = new 
+				Nhan2SoUseCaseControl(input, output, n2so);
+		control.execute();
 
 	}
 
